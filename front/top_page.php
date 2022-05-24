@@ -1,3 +1,4 @@
+<html>
 <?php
 
     require "../server/get_syohin.php";
@@ -6,8 +7,10 @@
     $datas = $get_syohin -> get_syohin();
 
     foreach($datas as $data){
-        echo $data["item_name"];
-        echo $data["item_value"];
-    }
 
+        echo "<form action='syousai.php' method='GET'>";
+            echo "<button type='submit' name='id' value=".$data['id'].">".$data['item_name']."</button>";
+            echo $data["item_value"]."円"."</br>";
+        echo "</form>";
+    }
 ?>
