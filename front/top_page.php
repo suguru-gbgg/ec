@@ -1,16 +1,29 @@
 <html>
-<?php
+    <?php
 
-    require "../server/get_syohin.php";
+        session_start();
+        if(empty($_SESSION["login_user_name"])){
+            header('Location: http://localhost/work/ec/front/erro_signin.php');
+        }
 
-    $get_syohin = new syohin;
-    $datas = $get_syohin -> get_syohin();
+        require "../server/get_syohin.php";
 
-    foreach($datas as $data){
+        $get_syohin = new syohin;
+        $datas = $get_syohin -> get_syohin();
 
-        echo "<form action='syousai.php' method='GET'>";
-            echo "<button type='submit' name='id' value=".$data['id'].">".$data['item_name']."</button>";
-            echo $data["item_value"]."円"."</br>";
-        echo "</form>";
-    }
-?>
+        foreach($datas as $data){
+
+            echo "<form action='syousai.php' method='GET'>";
+                echo "<button type='submit' name='id' value=".$data['id'].">".$data['item_name']."</button>";
+                echo $data["item_value"]."円"."</br>";
+            echo "</form>";
+            echo "<form action='../server/get_cart.php' method='GET'>";
+                echo "<button type='submit' name='id' value=".$data['id'].">カートに追加</button>"; 
+            echo "</form>";
+        }
+    ?>
+
+    <form action="cart.php" method="post">
+        <button type="submit" name="cart">カートを見る</button>
+    </form>
+</html>
