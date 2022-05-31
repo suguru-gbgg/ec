@@ -17,7 +17,7 @@
                 echo "<button type='submit' name='id' value=".$data['id'].">".$data['item_name']."</button>";
                 echo $data["item_value"]."円"."</br>";
             echo "</form>";
-            echo "<form action='../server/get_cart.php' method='GET'>";
+            echo "<form action='../server/cart_insert.php' method='GET'>";
                 echo "<button type='submit' name='id' value=".$data['id'].">カートに追加</button>"; 
             echo "</form>";
         }
