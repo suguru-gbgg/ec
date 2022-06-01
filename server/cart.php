@@ -1,6 +1,4 @@
 <?php
-    
-    session_start();
 
     class cart{
 
@@ -13,10 +11,10 @@
         }
 
        
-        function get_cart(){
+        function get_cart($login_user_name){
 
             $pdo = new PDO('mysql:host=localhost;dbname=ec;','root','');
-            $sql = "SELECT * FROM `cart` WHERE user_id ='".$_SESSION['login_user_name']."'";
+            $sql = "SELECT * FROM `cart` WHERE user_id ='".$login_user_name."'";
             $datas = $pdo -> query($sql);
 
             $item_names = array();
