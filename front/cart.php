@@ -1,8 +1,10 @@
 <?php
 
+    session_start();
+
     require "../server/cart.php";
     $cart = new cart;
-    $item_name = $cart -> get_cart();
+    $item_name = $cart -> get_cart($_SESSION["login_user_name"]);
     
     $count = count($item_name);
 
