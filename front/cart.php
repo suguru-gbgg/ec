@@ -11,5 +11,7 @@
     for($i=0;$i<$count;$i++){
     echo $item_name[$i]."</br>";
     }
-
+    echo "<form action='buy.php'>";
+        echo "<button type='submit' name='buy'>購入する</button>";
+    echo "</form>";
 ?>
