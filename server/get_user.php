@@ -2,10 +2,10 @@
 
     class kojinjouhou{
 
-        function kojinn(){
+        function kojinn($login_user_name){
 
             $pdo = new PDO('mysql:host=localhost;dbname=ec;','root','');
-            $sql = "SELECT * FROM `kojinnjyouhou` WHERE user_id = '".$_SESSION['login_user_name']."'";
+            $sql = "SELECT * FROM `kojinnjyouhou` WHERE user_id = '".$login_user_name."'";
             $datas = $pdo -> query($sql);
 
             return $datas;
