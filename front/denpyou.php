@@ -16,7 +16,7 @@
     }
 
     $kojin = new kojinjouhou;
-    $datas = $kojin -> kojinn();
+    $datas = $kojin -> kojinn($_SESSION["login_user_name"]);
 
     foreach($datas as $data){
         echo $data["name"]."</br>";
@@ -25,7 +25,7 @@
     }
 
     $value = new item_value;
-    $oder_value = $value -> value();
+    $oder_value = $value -> value($_SESSION["login_user_name"]);
     echo "合計".$oder_value."円";
 
 ?>

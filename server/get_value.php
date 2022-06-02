@@ -2,10 +2,10 @@
 
     class item_value{
 
-        function value(){
+        function value($login_user_name){
 
             $pdo = new PDO('mysql:host=localhost;dbname=ec;','root','');
-            $sql = "SELECT * FROM `cart` WHERE user_id ='".$_SESSION['login_user_name']."'";
+            $sql = "SELECT * FROM `cart` WHERE user_id ='".$login_user_name."'";
             $datas = $pdo -> query($sql);
 
             $value = 0;
