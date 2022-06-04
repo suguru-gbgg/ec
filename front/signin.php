@@ -1,9 +1,16 @@
 <html>
-
-    <form action="../server/get_signin.php" method="GET">
-        <input type="text" name="user_id" placeholder="ユーザID">
-        <input type="password" name="pass" placeholder="パスワード">
-        <input type="submit" value="サインイン">
-    <form>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>ECサイト</title>
+    </head>
+    
+    <div class="text-center">
+        <form action="../server/get_signin.php" method="GET">
+            <input type="text" name="user_id" placeholder="ユーザID" class="text-center">
+            <input type="password" name="pass" placeholder="パスワード" class="text-center">
+            <input type="submit" value="サインイン">
+        <form>
+    </div>
 
 </html>

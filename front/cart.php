@@ -1,17 +1,53 @@
-<?php
+<html>
 
-    session_start();
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+    </head>
 
-    require "../server/cart.php";
-    $cart = new cart;
-    $item_name = $cart -> get_cart($_SESSION["login_user_name"]);
+    <?php
+
+        session_start();
+
+        require "../server/cart.php";
+        $cart = new cart;
+        $item_name = $cart -> get_cart($_SESSION["login_user_name"]);
+        
+        $count = count($item_name);
+    ?>
+
+    <div class="d-flex justify-content-center">
+        <table class="table w-75 p-3">
+            <thead>
+                <tr>
+                    <th scope="col">商品名</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                 <?php
+                    for($i=0;$i<$count;$i++){
+                ?>
+
+                        <tr>
+                            <td><?php echo $item_name[$i]."</br>";?></td>
+                        </tr>
+
+                 <?php
+                    }
+                ?>
+                <tr>
+                    <td>
+                        <form action='buy.php'>
+                            <button type='submit' name='buy' class='btn btn-primary'>購入する</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     
-    $count = count($item_name);
+    </div>
+        
+    
 
-    for($i=0;$i<$count;$i++){
-    echo $item_name[$i]."</br>";
-    }
-    echo "<form action='buy.php'>";
-        echo "<button type='submit' name='buy'>購入する</button>";
-    echo "</form>";
-?>
+</html>
