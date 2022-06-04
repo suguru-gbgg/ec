@@ -19,9 +19,9 @@
     $datas = $kojin -> kojinn($_SESSION["login_user_name"]);
 
     foreach($datas as $data){
-        echo $data["name"]."</br>";
-        echo $data["juusyo"]."</br>";
-        echo $data["dennwa"]."</br>";
+        echo "名前:".$data["name"]."</br>";
+        echo "住所:".$data["juusyo"]."</br>";
+        echo "電話番号:".$data["dennwa"]."</br>";
     }
 
     $value = new item_value;
