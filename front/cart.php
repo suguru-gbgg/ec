@@ -31,6 +31,7 @@
 
                         <tr>
                             <td><?php echo $item_name[$i]."</br>";?></td>
+
                         </tr>
 
                  <?php
@@ -40,6 +41,9 @@
                     <td>
                         <form action='buy.php'>
                             <button type='submit' name='buy' class='btn btn-primary'>購入する</button>
+                        </form>
+                        <form action='top_page.php'>
+                            <button type='submit' name='buy' class='btn btn-primary'>戻る</button>
                         </form>
                     </td>
                 </tr>

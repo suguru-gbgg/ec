@@ -29,3 +29,16 @@
     echo "合計".$oder_value."円";
 
 ?>
+
+<html>
+    
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+    </head>
+
+    <form action="../server/seiri.php" method="GET">
+        <button type="submit" name="seiri" class="btn btn-secondary">トップページへ戻る</button>
+    </form>
+</html>
+
