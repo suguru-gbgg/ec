@@ -24,7 +24,7 @@
         ?>
         
             <div class="col-3">
-                <div class="card">
+                <div class="card m-3">
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php echo $data['item_name'];?></h5>
                         <p class="card-text text-center"><?php echo $data["item_value"];?>円</p>

@@ -9,7 +9,7 @@
         <form action="../server/get_signin.php" method="GET">
             <input type="text" name="user_id" placeholder="ユーザID" class="text-center">
             <input type="password" name="pass" placeholder="パスワード" class="text-center">
-            <input type="submit" value="サインイン">
+            <button type="submit" class='btn btn-primary'>サインイン</button>
         <form>
     </div>
 
